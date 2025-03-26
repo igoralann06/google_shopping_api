@@ -86,7 +86,12 @@ def clean_price(value):
     if not value or value.strip() == "":
         return 0.0  # Default to 0 if missing
 
-    return float(value.replace("$", "").replace(",", ""))
+    try:
+        # Remove currency symbols, commas, and whitespace
+        cleaned = value.strip().replace("$", "").replace(",", "").replace(" ", "")
+        return float(cleaned)
+    except (ValueError, AttributeError):
+        return 0.0  # Return 0 if conversion fails
 
 def clean_rating(value):
     """Convert rating from string to float, handling empty values."""
