@@ -203,10 +203,14 @@ def get_products(driver, keyword, db_name, table_name, current_time, prefix, ite
             product_link,
             "Google",
             store,
+            "",
             title,
+            "",
             price,
             download_url,
             image_url,
+            "",
+            "",
             rating,
             rating_count
         ]
