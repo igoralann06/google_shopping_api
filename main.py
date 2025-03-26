@@ -417,7 +417,7 @@ def get_products_api():
 if __name__ == "__main__":
     db_name = "product_data.db"
     create_database_table(db_name, "items_search")
-    app.run(host="0.0.0.0", port=4000 ,threaded=True,)
+    app.run(host="0.0.0.0", port=5010 ,threaded=True,)
 
 
 
