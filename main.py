@@ -21,8 +21,6 @@ from flask import Flask, render_template, send_from_directory, request, jsonify
 import base64
 from flask_cors import CORS
 
-base_url = "https://www.instacart.com"
-
 app = Flask(__name__)
 CORS(app)
 
