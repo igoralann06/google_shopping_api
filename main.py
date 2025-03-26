@@ -128,6 +128,8 @@ def get_products(driver, keyword, db_name, table_name, current_time, prefix, ite
         store = ""
 
         driver.execute_script("arguments[0].scrollIntoView();", element)
+        element.find_element(By.CLASS_NAME, "MtXiu").click()
+        time.sleep(3)
 
         try:
             img_element = element.find_element(By.CLASS_NAME, "VeBrne")
@@ -166,11 +168,11 @@ def get_products(driver, keyword, db_name, table_name, current_time, prefix, ite
         except:
             title = ""
         
-        # try:
-        #     product_link_element = element.find_element(By.TAG_NAME, "a")
-        #     product_link = product_link_element.get_attribute("href")
-        # except:
-        #     product_link = ""
+        try:
+            product_link_element = driver.find_element(By.CLASS_NAME, "P9159d")
+            product_link = product_link_element.get_dom_attribute("href")
+        except:
+            product_link = ""
 
         try:
             store_element = element.find_element(By.CLASS_NAME, "Z9qvte")
